@@ -1,38 +1,84 @@
 import React, {Component} from 'react';
-import SlideOne from './SlideOne';
-import SlideTwo from './SlideTwo';
-import SlideThree from './SlideThree';
-import SLideFour from './SlideFour';
+import Radium from 'radium';
+
+import Slide from './Slide';
+import SlideIndicator from './SlideIndicator';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
 class Slider extends Component {
     state = {
-        slideCount: 1
+        activeIndex: 0
     }
-    nextSlide = () => {
+    goToSlide = (index) => {
         this.setState({
-            slideCount: this.state.slideCount + 1
+            activeIndex: index
         })
     }
-    previousSlide = () => {
+    goToNextSlide = (e) => {
+        e.preventDefault();
+        let index = this.state.activeIndex;
+        let {slides} = this.props;
+        let slidesLength = slides.length - 1;
+
+        if(index === slidesLength) {
+            index = -1;
+        }
+        ++index;
         this.setState({
-            slideCount: this.state.slideCount - 1
+            activeIndex: index
+        })
+    }
+    goToPrevSlide = (e) => {
+        e.preventDefault();
+        let index = this.state.activeIndex;
+        let {slides} = this.props;
+        let slidesLength = slides.length;
+
+        if(index < 1) {
+            index = slidesLength;
+        }
+        --index;
+        this.setState({
+            activeIndex: index
         })
     }
 	render() {
-		return (
-			<div className='image-slider'>
-                <div className='slider-wrapper'>
-                    {this.state.slideCount === 1 ? <SlideOne /> : null}
-                    {this.state.slideCount === 2 ? <SlideTwo /> : null}
-                    {this.state.slideCount === 3 ? <SlideThree /> : null}
-                    {this.state.slideCount === 4 ? <SlideFour /> : null}
-                    <RightArrow nextSlide={() => this.nextSlide()}/>
-                    <LeftArrow previousSlide={() => this.previousSlide()}/>
-                </div>
+        const sliderStyle = {
+            imageSlider: {
+                position: 'relative',
+                backgroundPosition: 'center center',
+                height: 'auto',
+                whiteSpace: 'nowrap',
+                display: 'block'
+            }
+        }
+        return (
+			<div style={sliderStyle.imageSlider} className='image-slider'>
+                <LeftArrow onClick={(e) => this.goToPrevSlide(e)}/>
+                <ul className='slides'>
+                    {this.props.slides.map((slide, index) =>
+                        <Slide
+                            key={index}
+                            index={index}
+                            activeIndex={this.state.activeIndex}
+                            slide={slide}
+                        />
+                    )}
+                </ul>
+                <RightArrow onClick={(e) => this.goToNextSlide(e)}/>
+                <ul className='slide-indicators'>
+                    {this.props.slides.map((slide, index) =>
+                        <SlideIndicator
+                            key={index}
+                            index={index}
+                            activeIndex={this.state.activeIndex}
+                            onClick={e => this.goToSlide(index)}
+                        />
+                    )}
+                </ul>
             </div>
 		);
 	}
 }
-export default Slider;
+export default Radium(Slider);
