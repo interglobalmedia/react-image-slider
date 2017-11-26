@@ -1,11 +1,28 @@
 import React from 'react';
+import Radium from 'radium';
 
 const RightArrow = (props) => {
+	const sliderRightArrowStyle = {
+		sliderRightArrow: {
+			position: 'absolute',
+		    top: '50%',
+		    right: '10%',
+		    zIndex: '999',
+		    color: '#fff'
+		},
+		sliderBothArrows: {
+			fontSize: '28px',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+			cursor: 'pointer'
+		}
+	}
 	return (
-		<div onClick={props.nextSlide} className='slider-right-arrow'>
-			<i className='fa fa-chevron-right fa-2x' aria-hidden='true'></i>
+		<div style={[sliderRightArrowStyle.sliderRightArrow, sliderRightArrowStyle.sliderBothArrows]} onClick={props.onClick} className='slider-right-arrow'>
+			<i className='fa fa-chevron-right' aria-hidden='true'></i>
 		</div>
 	);
 }
 
-export default RightArrow;
+export default Radium(RightArrow);
