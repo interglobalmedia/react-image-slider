@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React, {Component} from 'react';
+//import Radium from 'radium';
 
 const LeftArrow = (props) => {
 	const sliderLeftArrowStyle = {
@@ -23,6 +23,7 @@ const LeftArrow = (props) => {
 			<i className="fa fa-chevron-left" aria-hidden="true"></i>
 		</div>
 	);
+
 }
 
-export default Radium(LeftArrow);
+export default LeftArrow;

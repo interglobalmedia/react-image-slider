@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Radium from 'radium';
+//import Radium from 'radium';
 
 import Slide from './Slide';
 import SlideIndicator from './SlideIndicator';
@@ -81,4 +81,4 @@ class Slider extends Component {
 		);
 	}
 }
-export default Radium(Slider);
+export default Slider;
