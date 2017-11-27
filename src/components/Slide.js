@@ -3,8 +3,10 @@ import Radium from 'radium';
 
 const Slide = (props) => {
 	const paraStyle = {
-		color: '#b22222',
-		textAlign: 'center'
+		para: {
+			color: '#b22222',
+			textAlign: 'center'
+		}
 	}
 	return (
 		<div
@@ -15,7 +17,7 @@ const Slide = (props) => {
 			}
 		>
 			<img className='slide-src' src={props.slide.src} index={props.index} />
-			<p style={paraStyle}>{props.slide.credits}</p>
+			<p style={paraStyle.para}>{props.slide.credits}</p>
 		</div>
 	)
 }

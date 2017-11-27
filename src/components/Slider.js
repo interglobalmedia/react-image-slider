@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Radium from 'radium';
-
 import Slide from './Slide';
 import SlideIndicator from './SlideIndicator';
 import LeftArrow from './LeftArrow';
@@ -78,6 +77,7 @@ class Slider extends Component {
                     )}
                 </ul>
             </div>
+
 		);
 	}
 }
