@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import Radium from 'radium';
+import Radium from 'radium';
 
 const RightArrow = (props) => {
 	const sliderRightArrowStyle = {
@@ -25,4 +25,4 @@ const RightArrow = (props) => {
 	)
 }
 
-export default RightArrow;
+export default Radium(RightArrow);
