@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Radium from 'radium';
+//import Radium, {StyleRoot} from 'radium';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
 
@@ -54,7 +54,6 @@ class App extends Component {
 			}
 		}
 		return (
-
 			<div className='App Site'>
 				<header style={headerStyle.header}>
 					<h1 style={[headerStyle.appHeaderH1, headerStyle.appHeaderH1Min800]} className='App-header'>Cat Slider</h1>
@@ -62,10 +61,25 @@ class App extends Component {
 				<div className='Site-content'>
 					<Slider slides={sliderData} />
 				</div>
-				<Footer />
+				<div>
+					<footer className='site-footer'>
+						<div className='wrapper'>
+							<div className='footer-social'>
+								<ul>
+									<li>
+										<Footer/>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div className='identity'>
+							<p>© 2017 Maria D. Campbell</p>
+						</div>
+					</footer>
+				</div>
 			</div>
 		)
 	}
 }
 
-export default Radium(App);
+export default App;

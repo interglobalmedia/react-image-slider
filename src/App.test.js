@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//import Radium from 'radium';
 import App from './App';
 
 describe('<App />', () => {
