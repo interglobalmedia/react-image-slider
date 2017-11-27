@@ -10,7 +10,7 @@ class FooterIcons extends Component {
 			[
 				{
 					id: 1,
-					linke: 'https://twitter.com/letsbsocial1',
+					link: 'https://twitter.com/letsbsocial1',
 					name: 'footerTwitter',
 					src: footerTwitter,
 					text: 'twitter'

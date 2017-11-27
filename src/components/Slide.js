@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import Radium from 'radium';
+import Radium from 'radium';
 
 const Slide = (props) => {
 	const paraStyle = {
@@ -20,4 +20,4 @@ const Slide = (props) => {
 	)
 }
 
-export default Slide;
+export default Radium(Slide);

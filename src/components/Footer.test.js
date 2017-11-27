@@ -7,42 +7,66 @@ import footerGoogle from '../../images/footerGoogle.svg';
 import footerLinkedin from '../../images/footerLinkedin.svg';
 
 describe('<Footer />', () => {
-	const expected = [
+	const svgs = [
 		{
 			id: 1,
-			svg: footerTwitter
+			link: 'https://twitter.com/letsbsocial1',
+			name: 'footerTwitter',
+			src: footerTwitter,
+			text: 'twitter'
 		},
 		{
 			id: 2,
-			svg: footerGithub
+			link: 'https://github.com/interglobalmedia',
+			name: 'footerGithub',
+			src: footerGithub,
+			text: 'github'
 		},
 		{
 			id: 3,
-			svg: footerGoogle
+			link: 'https://plus.google.com/u/0/110861192597778984723',
+			name: 'footerGoogleplus',
+			src: footerGoogle,
+			text: 'google plus'
 		},
 		{
 			id: 4,
-			svg: footerLinkedin
+			link: 'https://www.linkedin.com/in/mariacampbell/',
+			name: 'footerLinkedin',
+			src: footerLinkedin,
+			text: 'linkedin'
 		}
 	];
-	it('matches even if received contains additional elements', () => {
-		expect([
-    		{
+	test('the number of elements must match exactly', () => {
+		expect(svgs).toMatchObject([
+			{
     			id: 1,
-    			svg: footerTwitter
+    			link: 'https://twitter.com/letsbsocial1',
+    			name: 'footerTwitter',
+    			src: footerTwitter,
+    			text: 'twitter'
     		},
     		{
     			id: 2,
-    			svg: footerGithub
+    			link: 'https://github.com/interglobalmedia',
+    			name: 'footerGithub',
+    			src: footerGithub,
+    			text: 'github'
     		},
     		{
     			id: 3,
-    			svg: footerGoogle
+    			link: 'https://plus.google.com/u/0/110861192597778984723',
+    			name: 'footerGoogleplus',
+    			src: footerGoogle,
+    			text: 'google plus'
     		},
     		{
     			id: 4,
-    			svg: footerLinkedin
-    		}
-    	]).toEqual(expect.arrayContaining(expected));
+    			link: 'https://www.linkedin.com/in/mariacampbell/',
+    			name: 'footerLinkedin',
+    			src: footerLinkedin,
+    			text: 'linkedin'
+    		}]
+    	);
 	})
 })

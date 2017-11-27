@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-//import Radium, {StyleRoot} from 'radium';
+import Radium from 'radium';
+import Header from './components/Header';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
 
@@ -29,57 +30,16 @@ const sliderData = [
 
 class App extends Component {
 	render() {
-		const headerStyle = {
-			header: {
-				height: '60px',
-				textAlign: 'center',
-				width: '100%'
-			},
-			appHeaderH1: {
-				width: '100%',
-				position: 'absolute',
-				zIndex: '10',
-				top: '28px',
-				color: 'firebrick',
-				left: '50%',
-				transform: 'translateX(-50%)',
-				fontSize: '28px',
-				letterSpacing: '0.03em'
-			},
-			appHeaderH1Min800: {
-				'@media (min-width: 800px)': {
-					fontSize: '40px',
-					top: '18px'
-				}
-			}
-		}
 		return (
 			<div className='App Site'>
-				<header style={headerStyle.header}>
-					<h1 style={[headerStyle.appHeaderH1, headerStyle.appHeaderH1Min800]} className='App-header'>Cat Slider</h1>
-				</header>
+				<Header />
 				<div className='Site-content'>
 					<Slider slides={sliderData} />
 				</div>
-				<div>
-					<footer className='site-footer'>
-						<div className='wrapper'>
-							<div className='footer-social'>
-								<ul>
-									<li>
-										<Footer/>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div className='identity'>
-							<p>© 2017 Maria D. Campbell</p>
-						</div>
-					</footer>
-				</div>
+				<Footer />
 			</div>
 		)
 	}
 }
 
-export default App;
+export default Radium(App);
