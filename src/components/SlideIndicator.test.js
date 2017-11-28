@@ -10,5 +10,5 @@ describe('<SlideIndicator />', () => {
 			<SlideIndicator />
 			: null;
 	})
-	expect(<SlideIndicator />).toEqual(<SlideIndicator />)
+	expect(<SlideIndicator />).toEqual(<SlideIndicator />);
 })

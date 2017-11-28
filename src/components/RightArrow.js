@@ -5,10 +5,10 @@ const RightArrow = (props) => {
 	const sliderRightArrowStyle = {
 		sliderRightArrow: {
 			position: 'absolute',
-			    top: '50%',
-			    right: '10%',
-			    zIndex: '999',
-			    color: '#fff'
+			top: '50%',
+			right: '10%',
+			zIndex: '999',
+			color: '#fff'
 		},
 		sliderBothArrows: {
 			fontSize: '28px',

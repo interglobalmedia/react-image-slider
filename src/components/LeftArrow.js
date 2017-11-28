@@ -19,7 +19,7 @@ const LeftArrow = (props) => {
 		}
 	}
 	return (
-		<div style={[sliderLeftArrowStyle.sliderLeftArrow,sliderLeftArrowStyle.sliderBothArrows]} className='slider-left-arrow' onClick={props.onClick}>
+		<div style={[sliderLeftArrowStyle.sliderLeftArrow, sliderLeftArrowStyle.sliderBothArrows]} className='slider-left-arrow' onClick={props.onClick}>
 			<i className="fa fa-chevron-left" aria-hidden="true"></i>
 		</div>
 	);

@@ -7,8 +7,7 @@ class SlideIndicator extends Component {
 			<li>
 				<a className={this.props.index === this.props.activeIndex
 					? 'slide-indicator slide-indicator-active'
-					: 'slide-indicator'
-				}
+					: 'slide-indicator'}
 				onClick={this.props.onClick}
 				/>
 			</li>
