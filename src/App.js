@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
@@ -31,15 +31,17 @@ const sliderData = [
 class App extends Component {
 	render() {
 		return (
-			<div className='App Site'>
-				<Header />
-				<div className='Site-content'>
-					<Slider slides={sliderData} />
+			<StyleRoot>
+				<div className='App Site'>
+					<Header />
+					<div className='Site-content'>
+						<Slider slides={sliderData} />
+					</div>
+					<Footer />
 				</div>
-				<Footer />
-			</div>
+			</StyleRoot>
 		)
 	}
 }
 
-export default App;
+export default Radium(App);
