@@ -42,7 +42,7 @@ module.exports = {
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: [{
-						loadr: 'css-loader'
+						loader: 'css-loader'
 					}, {
 						loader: 'postcss-loader'
 					}, {
@@ -56,7 +56,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[path][name]-[hash:8].[ext]'
+							name: '[path]-[name]-[hash:8].[ext]'
 						},
 					},
 				]
