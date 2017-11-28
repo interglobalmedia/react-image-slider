@@ -8,6 +8,12 @@
         @media #{$min-800} {
             font-size: 24px;
         }
+        @media #{$min-1024} {
+            font-size: 28px;
+        }
+        @media #{$min-1440} {
+            font-size: 32px;
+        }
     }
     .slide-active {
         display: block;
@@ -56,6 +62,10 @@
     @media #{$min-1024} {
         width: 18px;
         height: 18px;
+    }
+    @media #{$min-1440} {
+        width: 24px;
+        height: 24px;
     }
     &:hover {
         opacity: 1;
