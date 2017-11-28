@@ -8,6 +8,13 @@ const Slide = (props) => {
 			textAlign: 'center'
 		}
 	}
+	const slideSrcStyle	= {
+		slideSrc: {
+			display: 'inline-block',
+			height: '100%',
+			width: '100%'
+		}
+	}
 	return (
 		<div
 			className={
@@ -16,7 +23,7 @@ const Slide = (props) => {
 					: 'slide'
 			}
 		>
-			<img className='slide-src' src={props.slide.src} index={props.index} />
+			<img style={slideSrcStyle.slideSrc} className='slide-src' src={props.slide.src} index={props.index} />
 			<p style={paraStyle.para}>{props.slide.credits}</p>
 		</div>
 	)

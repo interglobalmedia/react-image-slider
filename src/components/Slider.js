@@ -50,6 +50,24 @@ class Slider extends Component {
                 height: 'auto',
                 whiteSpace: 'nowrap',
                 display: 'block'
+            },
+            slide: {
+                marginRight: 'auto',
+                marginLeft: 'auto',
+                display: 'none',
+                textAlign: 'center',
+                fontSize: '20px'
+            },
+            slideMin800: {
+                fontSize: '24px'
+            }
+        }
+        const slideIndicatorsStyle = {
+            slideIndicators: {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                marginTop: '20px'
             }
         }
         return (
@@ -57,7 +75,7 @@ class Slider extends Component {
                 <LeftArrow onClick={(e) => this.goToPrevSlide(e)}/>
                 <ul className='slides'>
                     {this.props.slides.map((slide, index) =>
-                        <Slide
+                        <Slide style={[sliderStyle.slide, sliderStyle.slideMin800]}
                             key={index}
                             index={index}
                             activeIndex={this.state.activeIndex}
@@ -66,7 +84,7 @@ class Slider extends Component {
                     )}
                 </ul>
                 <RightArrow onClick={(e) => this.goToNextSlide(e)}/>
-                <ul className='slide-indicators'>
+                <ul style={slideIndicatorsStyle.slideIndicators} className='slide-indicators'>
                     {this.props.slides.map((slide, index) =>
                         <SlideIndicator
                             key={index}
